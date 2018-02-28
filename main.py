@@ -64,20 +64,19 @@ def get_source_bins_for_order(n):
     return source_bins
 
 
-def get_orders_for_task(n):
+def get_orders_for_task():
+    receiving_bin_tags = ['C11', 'C12', 'C13']
+
     orders = []
 
-    order_id = 1
-    while order_id <= n:
+    for i, receiving_bin_tag in enumerate(receiving_bin_tags):
         orders.append({
-            'orderId': order_id,
+            'orderId': i + 1,
             'sourceBins': get_source_bins_for_order(
                 n=numpy.random.randint(4, 7)
             ),
-            'receivingBinTag': 'X00',
+            'receivingBinTag': receiving_bin_tag,
         })
-
-        order_id += 1
 
     return orders
 
@@ -90,9 +89,7 @@ def get_tasks_for_method(num_training_tasks, num_testing_tasks):
         task = {
             'taskId': task_id,
             'isTrainingTask': task_id <= num_training_tasks,
-            'orders': get_orders_for_task(
-                n=numpy.random.randint(4, 7)
-            )
+            'orders': get_orders_for_task()
         }
         tasks.append(task)
 
@@ -101,22 +98,11 @@ def get_tasks_for_method(num_training_tasks, num_testing_tasks):
     return tasks
 
 
-def get_methods_for_subject():
-    method_types = ['pick-to-paper', 'pick-to-light', 'pick-to-rfid']
-
-    methods = []
-    for method_type in method_types:
-        methods.append({
-            'methodType': method_type,
-            'tasks': get_tasks_for_method(10, 10)
-        })
-
-    return methods
-
-
 if __name__ == '__main__':
     numpy.random.RandomState(42)
 
-    methods_for_one_subject = get_methods_for_subject()
+    tasks = {
+        'tasks': get_tasks_for_method(10, 10)
+    }
     with open('output.json', mode='w+') as f:
-        json.dump(methods_for_one_subject, f, indent=4)
+        json.dump(tasks, f, indent=4)
