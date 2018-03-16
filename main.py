@@ -17,6 +17,9 @@ class Bin(object):
     def tag(self):
         return "%s%s%s" % (self.shelve_label, self.row_number, self.column_number)
 
+    def __str__(self):
+        return self.tag
+
     def __eq__(self, other):
         return self.tag == other.tag
 
@@ -34,11 +37,12 @@ BINS = get_bins()
 
 
 def get_source_bins_for_order(n):
-    selected_bins = numpy.random.choice(BINS, n, replace=True)
-    selected_bins = list(selected_bins)
+    randomly_selected_bin = numpy.random.choice(BINS, n, replace=True)
+    selected_bins = list(randomly_selected_bin)
 
     source_bins = []
 
+    # Count the number of items per unique source bin
     i = 0
     while i < len(selected_bins):
         current_bin = selected_bins[i]
@@ -49,8 +53,10 @@ def get_source_bins_for_order(n):
             if current_bin == selected_bins[j]:
                 selected_bins.pop(j)
                 count += 1
-
-            j += 1
+                # We remove an item at j, so don't increment j
+            else:
+                # The item at j is fine, so move on
+                j += 1
 
         i += 1
 
@@ -60,6 +66,9 @@ def get_source_bins_for_order(n):
         })
 
     source_bins.sort(key=lambda sb: sb['binTag'][0])
+
+    source_bin_tags_set = set([sb['binTag'] for sb in source_bins])
+    assert len(source_bin_tags_set) == len(source_bins), "There is a duplicated source bin tag."
 
     return source_bins
 
@@ -99,7 +108,7 @@ def get_tasks_for_method(num_training_tasks, num_testing_tasks):
 
 
 if __name__ == '__main__':
-    numpy.random.RandomState(42)
+    numpy.random.seed(1)
 
     tasks = {
         'tasks': get_tasks_for_method(10, 10)
