@@ -118,7 +118,7 @@ def get_orders_for_task():
         orders.append({
             'orderId': i + 1,
             'sourceBins': get_source_bins_for_order(
-                num_source_bins=numpy.random.randint(4, 7)
+                num_source_bins=numpy.random.randint(8, 13)
             ),
             'receivingBinTag': receiving_bin_tag,
         })
