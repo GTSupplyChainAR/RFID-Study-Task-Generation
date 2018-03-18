@@ -36,39 +36,75 @@ def get_bins():
 BINS = get_bins()
 
 
-def get_source_bins_for_order(n):
-    randomly_selected_bin = numpy.random.choice(BINS, n, replace=True)
-    selected_bins = list(randomly_selected_bin)
+def get_source_bins_for_order(num_source_bins):
+    """
+    Randomly selects n source bins that subjects will pick from in an order.
+
+    Parameters
+    ----------
+    num_source_bins: int
+        The number of source bins in this order
+
+    Returns
+    -------
+        A list of dictionaries with keys 'binTag' and 'numItems'.
+        Entries are sorted alphabetically by each 'binTag'.
+
+    Examples
+    --------
+    >>> get_source_bins_for_order(3)
+    [
+        {
+            'binTag': 'A32',
+            'numItems': 2
+        },
+        {
+            'binTag': 'B12',
+            'numItems': 1
+        }
+    ]
+
+    """
+
+    # Gets source bins with replacement meaning that there may be duplicate Bin tags
+    # When num_source_bins=3, this may return bins with tags 'A32', 'B12', 'A32'.
+    randomly_selected_bins = numpy.random.choice(BINS, num_source_bins, replace=True)
+    selected_bins = list(randomly_selected_bins)
+
+    # In the loops below, we want to map a source bin tag to the number of times it was selected.
+    # See the Examples in the docstring for the output of selecting 'A32', 'B12', 'A32'.
 
     source_bins = []
 
-    # Count the number of items per unique source bin
+    # Group selected bins by bin tag and count instances of that tag in the list
     i = 0
     while i < len(selected_bins):
         current_bin = selected_bins[i]
-        count = 1
+        count_of_bins_with_tag = 1
 
+        # Start searching for duplicate bin tags after current_bin
         j = i + 1
         while j < len(selected_bins):
-            if current_bin == selected_bins[j]:
+            if current_bin.tag == selected_bins[j].tag:
                 selected_bins.pop(j)
-                count += 1
-                # We remove an item at j, so don't increment j
+                count_of_bins_with_tag += 1
+                # We removed a bin at j, so don't increment j
             else:
-                # The item at j is fine, so move on
+                # The bin at j is fine, so move on
                 j += 1
 
         i += 1
 
         source_bins.append({
             'binTag': current_bin.tag,
-            'numItems': count
+            'numItems': count_of_bins_with_tag
         })
 
-    source_bins.sort(key=lambda sb: sb['binTag'][0])
+    # Sort (in-place) the source_bins by their tags
+    source_bins.sort(key=lambda sb: sb['binTag'])
 
-    source_bin_tags_set = set([sb['binTag'] for sb in source_bins])
-    assert len(source_bin_tags_set) == len(source_bins), "There is a duplicated source bin tag."
+    assert len(set([sb['binTag'] for sb in source_bins])) == len(source_bins), \
+        "There is a duplicated source bin tag which shouldn't happened!"
 
     return source_bins
 
@@ -82,7 +118,7 @@ def get_orders_for_task():
         orders.append({
             'orderId': i + 1,
             'sourceBins': get_source_bins_for_order(
-                n=numpy.random.randint(4, 7)
+                num_source_bins=numpy.random.randint(4, 7)
             ),
             'receivingBinTag': receiving_bin_tag,
         })
