@@ -138,58 +138,68 @@ def get_orders_for_task():
     return orders
 
 
-def get_tasks_for_method(num_tasks):
-    tasks = []
+def get_tasks_for_method(num_training_tasks, num_testing_tasks):
+    training_tasks = []
 
     task_id = 1
-    while task_id <= num_tasks:
+    while task_id <= num_training_tasks:
         task = {
             'taskId': task_id,
             'orders': get_orders_for_task()
         }
-        tasks.append(task)
-
+        training_tasks.append(task)
         task_id += 1
 
-    return tasks
+    testing_tasks = []
+    while task_id <= num_training_tasks + num_testing_tasks:
+        task = {
+            'taskId': task_id,
+            'orders': get_orders_for_task()
+        }
+        testing_tasks.append(task)
+        task_id += 1
+
+    # Ensure the lengths of the tasks lists are as expected
+    assert len(training_tasks) == num_training_tasks
+    assert len(testing_tasks) == num_testing_tasks
+
+    return training_tasks, testing_tasks
 
 
-def write_tasks_to_output_file(tasks, output_file_name):
+def write_tasks_to_output_file(tasks, is_training_task_list, study_method):
     """ Writes the given tasks to the given output file """
+
+    output_file_name = "%s-%s-%s.json" % ('tasks', study_method, 'training' if is_training_task_list else 'testing')
+
+    # Create the output directory if it doesn't already exist
+    output_file_dir = os.path.join('output', study_method)
+    if not os.path.isdir(output_file_dir):
+        os.mkdir(output_file_dir)
+
+    # Print out the task IDs
+    print_task_ordering(tasks, is_training_task_list=is_training_task_list)
+
+    # Write to the output file
+    output_file_name = os.path.join(output_file_dir, output_file_name)
     with open(output_file_name, mode='w+') as f:
         json.dump({'tasks': tasks}, f, indent=4)
 
 
-def print_task_ordering(tasks):
+def print_task_ordering(tasks, is_training_task_list):
     """ Simply prints out all task IDs"""
-    print([task['taskId'] for task in tasks])
-
-
-def assign_training_testing_labels_to_tasks(tasks, num_training, num_testing):
-    """ Called after shuffling tasks, this method assigned the isTrainingTask label appropriately"""
-    assert len(tasks) == num_training + num_testing
-
-    i = 0
-    while i < len(tasks):
-        tasks[i]['isTrainingTask'] = i < num_training
-        i += 1
-
-    # Ensure every task has a isTrainingTask value assigned
-    assert all('isTrainingTask' in task_dict for task_dict in tasks)
-
-    # Ensure there isn't a testing task before a training task
-    assert not any(tasks[i] is False and tasks[i + 1] is True for i in range(len(tasks) - 1))
-
-    # Ensure the counts expected are achieved
-    assert len([task for task in tasks if task['isTrainingTask']]) == num_training
-    assert len([task for task in tasks if not task['isTrainingTask']]) == num_testing
+    task_list_str = str([task['taskId'] for task in tasks])
+    if is_training_task_list:
+        print("Training: " + task_list_str)
+    else:
+        print("Testing:  " + task_list_str)
 
 
 if __name__ == '__main__':
     numpy.random.seed(1)
 
-    tasks = get_tasks_for_method(
-        num_tasks=NUM_TRAINING_TASKS + NUM_TESTING_TASKS
+    training_tasks, testing_tasks = get_tasks_for_method(
+        num_training_tasks=NUM_TRAINING_TASKS,
+        num_testing_tasks=NUM_TESTING_TASKS,
     )
 
     # Create an output directory, if it doesn't already exist
@@ -197,16 +207,21 @@ if __name__ == '__main__':
         os.mkdir('output')
 
     # Write the "master" list of tasks
-    assign_training_testing_labels_to_tasks(tasks, NUM_TRAINING_TASKS, NUM_TESTING_TASKS)
-    print_task_ordering(tasks)
-    write_tasks_to_output_file(tasks, 'output/tasks-MASTER.json')
+    write_tasks_to_output_file(training_tasks, is_training_task_list=True, study_method='MASTER')
+    write_tasks_to_output_file(testing_tasks, is_training_task_list=False, study_method='MASTER')
 
     # For each method, shuffle the tasks and write them to an output file
     for method_name in STUDY_METHODS:
-        # Shuffle the tasks, in-place
-        numpy.random.shuffle(tasks)
 
-        # Re-assign the training/testing labels and write to an output file
-        assign_training_testing_labels_to_tasks(tasks, NUM_TRAINING_TASKS, NUM_TESTING_TASKS)
-        print_task_ordering(tasks)
-        write_tasks_to_output_file(tasks, 'output/tasks-shuffled-for-%s.json' % (method_name,))
+        # Create a folder for each method
+        method_dir_name = os.path.join('output', method_name)
+        if not os.path.isdir(method_dir_name):
+            os.mkdir(method_dir_name)
+
+        # Shuffle the tasks, in-place
+        numpy.random.shuffle(training_tasks)
+        numpy.random.shuffle(testing_tasks)
+
+        # Write the new tasks
+        write_tasks_to_output_file(training_tasks, is_training_task_list=True, study_method=method_name)
+        write_tasks_to_output_file(testing_tasks, is_training_task_list=False, study_method=method_name)
