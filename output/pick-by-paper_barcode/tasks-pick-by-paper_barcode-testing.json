@@ -7,6 +7,14 @@
                     "receivingBinTag": "C11", 
                     "sourceBins": [
                         {
+                            "binTag": "A11", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "A13", 
+                            "numItems": 1
+                        }, 
+                        {
                             "binTag": "A31", 
                             "numItems": 1
                         }, 
@@ -15,142 +23,7 @@
                             "numItems": 1
                         }, 
                         {
-                            "binTag": "A33", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "A42", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "A43", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "B11", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "B12", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "B22", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "B23", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "B31", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "B42", 
-                            "numItems": 1
-                        }
-                    ]
-                }, 
-                {
-                    "orderId": 2, 
-                    "receivingBinTag": "C12", 
-                    "sourceBins": [
-                        {
-                            "binTag": "A12", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "A22", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "A32", 
-                            "numItems": 1
-                        }, 
-                        {
                             "binTag": "B13", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "B22", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "B31", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "B33", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "B43", 
-                            "numItems": 1
-                        }
-                    ]
-                }, 
-                {
-                    "orderId": 3, 
-                    "receivingBinTag": "C13", 
-                    "sourceBins": [
-                        {
-                            "binTag": "A11", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "A12", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "A13", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "A21", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "A22", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "B22", 
-                            "numItems": 2
-                        }, 
-                        {
-                            "binTag": "B41", 
-                            "numItems": 2
-                        }, 
-                        {
-                            "binTag": "B42", 
-                            "numItems": 1
-                        }
-                    ]
-                }
-            ], 
-            "taskId": 19
-        }, 
-        {
-            "orders": [
-                {
-                    "orderId": 1, 
-                    "receivingBinTag": "C11", 
-                    "sourceBins": [
-                        {
-                            "binTag": "A33", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "A42", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "B13", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "B22", 
                             "numItems": 1
                         }, 
                         {
@@ -164,10 +37,6 @@
                         {
                             "binTag": "B41", 
                             "numItems": 2
-                        }, 
-                        {
-                            "binTag": "B43", 
-                            "numItems": 1
                         }
                     ]
                 }, 
@@ -176,11 +45,80 @@
                     "receivingBinTag": "C12", 
                     "sourceBins": [
                         {
-                            "binTag": "A11", 
+                            "binTag": "A22", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "A23", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "A31", 
                             "numItems": 2
                         }, 
                         {
+                            "binTag": "A43", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "B12", 
+                            "numItems": 3
+                        }, 
+                        {
+                            "binTag": "B22", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "B23", 
+                            "numItems": 1
+                        }
+                    ]
+                }, 
+                {
+                    "orderId": 3, 
+                    "receivingBinTag": "C13", 
+                    "sourceBins": [
+                        {
                             "binTag": "A13", 
+                            "numItems": 2
+                        }, 
+                        {
+                            "binTag": "A21", 
+                            "numItems": 3
+                        }, 
+                        {
+                            "binTag": "A43", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "B11", 
+                            "numItems": 3
+                        }, 
+                        {
+                            "binTag": "B12", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "B23", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "B42", 
+                            "numItems": 1
+                        }
+                    ]
+                }
+            ], 
+            "taskId": 20
+        }, 
+        {
+            "orders": [
+                {
+                    "orderId": 1, 
+                    "receivingBinTag": "C11", 
+                    "sourceBins": [
+                        {
+                            "binTag": "A11", 
                             "numItems": 1
                         }, 
                         {
@@ -188,19 +126,19 @@
                             "numItems": 1
                         }, 
                         {
-                            "binTag": "A22", 
-                            "numItems": 2
-                        }, 
-                        {
-                            "binTag": "B11", 
-                            "numItems": 2
-                        }, 
-                        {
-                            "binTag": "B12", 
+                            "binTag": "A32", 
                             "numItems": 1
                         }, 
                         {
-                            "binTag": "B22", 
+                            "binTag": "A43", 
+                            "numItems": 3
+                        }, 
+                        {
+                            "binTag": "B11", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "B12", 
                             "numItems": 1
                         }, 
                         {
@@ -214,251 +152,39 @@
                     ]
                 }, 
                 {
-                    "orderId": 3, 
-                    "receivingBinTag": "C13", 
+                    "orderId": 2, 
+                    "receivingBinTag": "C12", 
                     "sourceBins": [
                         {
-                            "binTag": "A11", 
+                            "binTag": "A13", 
                             "numItems": 1
                         }, 
                         {
-                            "binTag": "A21", 
-                            "numItems": 1
+                            "binTag": "A22", 
+                            "numItems": 2
                         }, 
                         {
                             "binTag": "A23", 
                             "numItems": 1
                         }, 
                         {
-                            "binTag": "A42", 
+                            "binTag": "A31", 
                             "numItems": 1
                         }, 
                         {
                             "binTag": "A43", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "B13", 
                             "numItems": 2
-                        }, 
-                        {
-                            "binTag": "B11", 
-                            "numItems": 3
-                        }, 
-                        {
-                            "binTag": "B21", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "B22", 
-                            "numItems": 1
                         }, 
                         {
                             "binTag": "B31", 
-                            "numItems": 1
-                        }
-                    ]
-                }
-            ], 
-            "taskId": 15
-        }, 
-        {
-            "orders": [
-                {
-                    "orderId": 1, 
-                    "receivingBinTag": "C11", 
-                    "sourceBins": [
-                        {
-                            "binTag": "A13", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "A21", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "A22", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "A41", 
-                            "numItems": 2
-                        }, 
-                        {
-                            "binTag": "A42", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "B22", 
-                            "numItems": 2
-                        }, 
-                        {
-                            "binTag": "B23", 
                             "numItems": 1
                         }, 
                         {
                             "binTag": "B32", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "B33", 
-                            "numItems": 1
-                        }
-                    ]
-                }, 
-                {
-                    "orderId": 2, 
-                    "receivingBinTag": "C12", 
-                    "sourceBins": [
-                        {
-                            "binTag": "A13", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "A21", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "A22", 
-                            "numItems": 2
-                        }, 
-                        {
-                            "binTag": "A33", 
-                            "numItems": 2
-                        }, 
-                        {
-                            "binTag": "A41", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "B12", 
-                            "numItems": 2
-                        }, 
-                        {
-                            "binTag": "B13", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "B22", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "B31", 
-                            "numItems": 1
-                        }
-                    ]
-                }, 
-                {
-                    "orderId": 3, 
-                    "receivingBinTag": "C13", 
-                    "sourceBins": [
-                        {
-                            "binTag": "A13", 
-                            "numItems": 2
-                        }, 
-                        {
-                            "binTag": "A23", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "A31", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "A32", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "A33", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "B13", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "B22", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "B32", 
-                            "numItems": 1
-                        }
-                    ]
-                }
-            ], 
-            "taskId": 12
-        }, 
-        {
-            "orders": [
-                {
-                    "orderId": 1, 
-                    "receivingBinTag": "C11", 
-                    "sourceBins": [
-                        {
-                            "binTag": "A12", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "A13", 
-                            "numItems": 2
-                        }, 
-                        {
-                            "binTag": "A21", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "A22", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "A31", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "A32", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "A42", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "B12", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "B13", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "B31", 
-                            "numItems": 1
-                        }
-                    ]
-                }, 
-                {
-                    "orderId": 2, 
-                    "receivingBinTag": "C12", 
-                    "sourceBins": [
-                        {
-                            "binTag": "A23", 
-                            "numItems": 3
-                        }, 
-                        {
-                            "binTag": "A31", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "A32", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "A33", 
-                            "numItems": 2
-                        }, 
-                        {
-                            "binTag": "B22", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "B23", 
                             "numItems": 1
                         }, 
                         {
@@ -472,87 +198,6 @@
                     "receivingBinTag": "C13", 
                     "sourceBins": [
                         {
-                            "binTag": "A12", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "A21", 
-                            "numItems": 2
-                        }, 
-                        {
-                            "binTag": "A41", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "A43", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "B12", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "B13", 
-                            "numItems": 2
-                        }, 
-                        {
-                            "binTag": "B32", 
-                            "numItems": 1
-                        }
-                    ]
-                }
-            ], 
-            "taskId": 16
-        }, 
-        {
-            "orders": [
-                {
-                    "orderId": 1, 
-                    "receivingBinTag": "C11", 
-                    "sourceBins": [
-                        {
-                            "binTag": "A32", 
-                            "numItems": 2
-                        }, 
-                        {
-                            "binTag": "A33", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "A43", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "B13", 
-                            "numItems": 2
-                        }, 
-                        {
-                            "binTag": "B22", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "B31", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "B41", 
-                            "numItems": 1
-                        }
-                    ]
-                }, 
-                {
-                    "orderId": 2, 
-                    "receivingBinTag": "C12", 
-                    "sourceBins": [
-                        {
-                            "binTag": "A11", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "A13", 
-                            "numItems": 1
-                        }, 
-                        {
                             "binTag": "A32", 
                             "numItems": 1
                         }, 
@@ -561,63 +206,29 @@
                             "numItems": 1
                         }, 
                         {
+                            "binTag": "A42", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "A43", 
+                            "numItems": 2
+                        }, 
+                        {
                             "binTag": "B11", 
                             "numItems": 1
                         }, 
                         {
-                            "binTag": "B22", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "B23", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "B43", 
-                            "numItems": 1
-                        }
-                    ]
-                }, 
-                {
-                    "orderId": 3, 
-                    "receivingBinTag": "C13", 
-                    "sourceBins": [
-                        {
-                            "binTag": "A12", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "A23", 
-                            "numItems": 2
-                        }, 
-                        {
-                            "binTag": "A41", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "A42", 
-                            "numItems": 2
-                        }, 
-                        {
-                            "binTag": "A43", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "B23", 
+                            "binTag": "B32", 
                             "numItems": 1
                         }, 
                         {
                             "binTag": "B33", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "B42", 
-                            "numItems": 1
+                            "numItems": 2
                         }
                     ]
                 }
             ], 
-            "taskId": 14
+            "taskId": 13
         }, 
         {
             "orders": [
@@ -627,10 +238,6 @@
                     "sourceBins": [
                         {
                             "binTag": "A11", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "A12", 
                             "numItems": 1
                         }, 
                         {
@@ -638,210 +245,15 @@
                             "numItems": 1
                         }, 
                         {
-                            "binTag": "A23", 
-                            "numItems": 2
-                        }, 
-                        {
                             "binTag": "A31", 
                             "numItems": 1
                         }, 
-                        {
-                            "binTag": "A32", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "B13", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "B22", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "B31", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "B42", 
-                            "numItems": 1
-                        }
-                    ]
-                }, 
-                {
-                    "orderId": 2, 
-                    "receivingBinTag": "C12", 
-                    "sourceBins": [
-                        {
-                            "binTag": "A11", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "A22", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "A32", 
-                            "numItems": 2
-                        }, 
-                        {
-                            "binTag": "A42", 
-                            "numItems": 2
-                        }, 
-                        {
-                            "binTag": "B11", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "B13", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "B31", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "B33", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "B42", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "B43", 
-                            "numItems": 1
-                        }
-                    ]
-                }, 
-                {
-                    "orderId": 3, 
-                    "receivingBinTag": "C13", 
-                    "sourceBins": [
-                        {
-                            "binTag": "A11", 
-                            "numItems": 2
-                        }, 
-                        {
-                            "binTag": "A31", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "A32", 
-                            "numItems": 2
-                        }, 
-                        {
-                            "binTag": "B11", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "B32", 
-                            "numItems": 3
-                        }
-                    ]
-                }
-            ], 
-            "taskId": 17
-        }, 
-        {
-            "orders": [
-                {
-                    "orderId": 1, 
-                    "receivingBinTag": "C11", 
-                    "sourceBins": [
-                        {
-                            "binTag": "A31", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "A41", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "B11", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "B12", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "B23", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "B31", 
-                            "numItems": 2
-                        }, 
-                        {
-                            "binTag": "B33", 
-                            "numItems": 2
-                        }, 
-                        {
-                            "binTag": "B42", 
-                            "numItems": 2
-                        }
-                    ]
-                }, 
-                {
-                    "orderId": 2, 
-                    "receivingBinTag": "C12", 
-                    "sourceBins": [
                         {
                             "binTag": "A32", 
                             "numItems": 1
                         }, 
                         {
                             "binTag": "A43", 
-                            "numItems": 2
-                        }, 
-                        {
-                            "binTag": "B12", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "B21", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "B22", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "B32", 
-                            "numItems": 3
-                        }, 
-                        {
-                            "binTag": "B42", 
-                            "numItems": 1
-                        }
-                    ]
-                }, 
-                {
-                    "orderId": 3, 
-                    "receivingBinTag": "C13", 
-                    "sourceBins": [
-                        {
-                            "binTag": "A12", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "A13", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "A23", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "A31", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "A43", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "B12", 
                             "numItems": 1
                         }, 
                         {
@@ -849,12 +261,92 @@
                             "numItems": 2
                         }, 
                         {
-                            "binTag": "B32", 
+                            "binTag": "B31", 
                             "numItems": 1
                         }, 
                         {
-                            "binTag": "B42", 
+                            "binTag": "B43", 
                             "numItems": 2
+                        }
+                    ]
+                }, 
+                {
+                    "orderId": 2, 
+                    "receivingBinTag": "C12", 
+                    "sourceBins": [
+                        {
+                            "binTag": "A12", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "A23", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "A31", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "A43", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "B13", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "B21", 
+                            "numItems": 2
+                        }, 
+                        {
+                            "binTag": "B31", 
+                            "numItems": 2
+                        }, 
+                        {
+                            "binTag": "B42", 
+                            "numItems": 1
+                        }
+                    ]
+                }, 
+                {
+                    "orderId": 3, 
+                    "receivingBinTag": "C13", 
+                    "sourceBins": [
+                        {
+                            "binTag": "A11", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "A12", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "A33", 
+                            "numItems": 2
+                        }, 
+                        {
+                            "binTag": "A43", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "B11", 
+                            "numItems": 2
+                        }, 
+                        {
+                            "binTag": "B12", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "B13", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "B31", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "B32", 
+                            "numItems": 1
                         }
                     ]
                 }
@@ -880,19 +372,83 @@
                             "numItems": 1
                         }, 
                         {
-                            "binTag": "A32", 
+                            "binTag": "A42", 
                             "numItems": 1
+                        }, 
+                        {
+                            "binTag": "B11", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "B13", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "B23", 
+                            "numItems": 2
+                        }, 
+                        {
+                            "binTag": "B31", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "B33", 
+                            "numItems": 1
+                        }
+                    ]
+                }, 
+                {
+                    "orderId": 2, 
+                    "receivingBinTag": "C12", 
+                    "sourceBins": [
+                        {
+                            "binTag": "A12", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "A13", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "A31", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "A43", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "B22", 
+                            "numItems": 2
+                        }, 
+                        {
+                            "binTag": "B41", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "B43", 
+                            "numItems": 1
+                        }
+                    ]
+                }, 
+                {
+                    "orderId": 3, 
+                    "receivingBinTag": "C13", 
+                    "sourceBins": [
+                        {
+                            "binTag": "A31", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "A32", 
+                            "numItems": 2
                         }, 
                         {
                             "binTag": "A33", 
                             "numItems": 1
                         }, 
                         {
-                            "binTag": "A43", 
-                            "numItems": 2
-                        }, 
-                        {
-                            "binTag": "B11", 
+                            "binTag": "A41", 
                             "numItems": 1
                         }, 
                         {
@@ -900,7 +456,169 @@
                             "numItems": 1
                         }, 
                         {
+                            "binTag": "B13", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "B32", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "B42", 
+                            "numItems": 1
+                        }
+                    ]
+                }
+            ], 
+            "taskId": 19
+        }, 
+        {
+            "orders": [
+                {
+                    "orderId": 1, 
+                    "receivingBinTag": "C11", 
+                    "sourceBins": [
+                        {
+                            "binTag": "A13", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "A22", 
+                            "numItems": 2
+                        }, 
+                        {
+                            "binTag": "A33", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "A41", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "B12", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "B21", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "B31", 
+                            "numItems": 1
+                        }, 
+                        {
                             "binTag": "B33", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "B41", 
+                            "numItems": 1
+                        }
+                    ]
+                }, 
+                {
+                    "orderId": 2, 
+                    "receivingBinTag": "C12", 
+                    "sourceBins": [
+                        {
+                            "binTag": "A13", 
+                            "numItems": 2
+                        }, 
+                        {
+                            "binTag": "A42", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "A43", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "B23", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "B33", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "B42", 
+                            "numItems": 3
+                        }
+                    ]
+                }, 
+                {
+                    "orderId": 3, 
+                    "receivingBinTag": "C13", 
+                    "sourceBins": [
+                        {
+                            "binTag": "A23", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "A33", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "A41", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "A42", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "B11", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "B31", 
+                            "numItems": 2
+                        }, 
+                        {
+                            "binTag": "B43", 
+                            "numItems": 1
+                        }
+                    ]
+                }
+            ], 
+            "taskId": 12
+        }, 
+        {
+            "orders": [
+                {
+                    "orderId": 1, 
+                    "receivingBinTag": "C11", 
+                    "sourceBins": [
+                        {
+                            "binTag": "A13", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "A22", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "A31", 
+                            "numItems": 2
+                        }, 
+                        {
+                            "binTag": "A32", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "A42", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "B23", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "B41", 
+                            "numItems": 2
+                        }, 
+                        {
+                            "binTag": "B42", 
                             "numItems": 1
                         }
                     ]
@@ -918,53 +636,23 @@
                             "numItems": 1
                         }, 
                         {
-                            "binTag": "A23", 
+                            "binTag": "A31", 
                             "numItems": 1
                         }, 
                         {
-                            "binTag": "A32", 
-                            "numItems": 2
+                            "binTag": "A33", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "A42", 
+                            "numItems": 1
                         }, 
                         {
                             "binTag": "B11", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "B12", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "B31", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "B42", 
-                            "numItems": 1
-                        }
-                    ]
-                }, 
-                {
-                    "orderId": 3, 
-                    "receivingBinTag": "C13", 
-                    "sourceBins": [
-                        {
-                            "binTag": "A12", 
                             "numItems": 2
                         }, 
                         {
-                            "binTag": "A32", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "A41", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "B21", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "B31", 
+                            "binTag": "B22", 
                             "numItems": 1
                         }, 
                         {
@@ -976,20 +664,11 @@
                             "numItems": 1
                         }
                     ]
-                }
-            ], 
-            "taskId": 20
-        }, 
-        {
-            "orders": [
+                }, 
                 {
-                    "orderId": 1, 
-                    "receivingBinTag": "C11", 
+                    "orderId": 3, 
+                    "receivingBinTag": "C13", 
                     "sourceBins": [
-                        {
-                            "binTag": "A11", 
-                            "numItems": 2
-                        }, 
                         {
                             "binTag": "A12", 
                             "numItems": 1
@@ -998,32 +677,6 @@
                             "binTag": "A13", 
                             "numItems": 1
                         }, 
-                        {
-                            "binTag": "A32", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "A43", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "B31", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "B33", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "B42", 
-                            "numItems": 1
-                        }
-                    ]
-                }, 
-                {
-                    "orderId": 2, 
-                    "receivingBinTag": "C12", 
-                    "sourceBins": [
                         {
                             "binTag": "A21", 
                             "numItems": 1
@@ -1033,23 +686,15 @@
                             "numItems": 1
                         }, 
                         {
-                            "binTag": "A31", 
-                            "numItems": 3
-                        }, 
-                        {
-                            "binTag": "A32", 
-                            "numItems": 1
+                            "binTag": "A41", 
+                            "numItems": 2
                         }, 
                         {
                             "binTag": "B11", 
                             "numItems": 1
                         }, 
                         {
-                            "binTag": "B12", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "B21", 
+                            "binTag": "B13", 
                             "numItems": 1
                         }, 
                         {
@@ -1057,37 +702,7 @@
                             "numItems": 1
                         }, 
                         {
-                            "binTag": "B32", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "B43", 
-                            "numItems": 1
-                        }
-                    ]
-                }, 
-                {
-                    "orderId": 3, 
-                    "receivingBinTag": "C13", 
-                    "sourceBins": [
-                        {
-                            "binTag": "A41", 
-                            "numItems": 2
-                        }, 
-                        {
-                            "binTag": "A42", 
-                            "numItems": 2
-                        }, 
-                        {
-                            "binTag": "B11", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "B12", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "B31", 
+                            "binTag": "B23", 
                             "numItems": 1
                         }, 
                         {
@@ -1095,11 +710,7 @@
                             "numItems": 1
                         }, 
                         {
-                            "binTag": "B41", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "B42", 
+                            "binTag": "B43", 
                             "numItems": 1
                         }
                     ]
@@ -1114,39 +725,35 @@
                     "receivingBinTag": "C11", 
                     "sourceBins": [
                         {
-                            "binTag": "A23", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "A33", 
+                            "binTag": "A32", 
                             "numItems": 2
-                        }, 
-                        {
-                            "binTag": "A41", 
-                            "numItems": 1
                         }, 
                         {
                             "binTag": "A42", 
-                            "numItems": 2
+                            "numItems": 1
                         }, 
                         {
                             "binTag": "A43", 
-                            "numItems": 2
+                            "numItems": 1
                         }, 
                         {
                             "binTag": "B12", 
                             "numItems": 1
                         }, 
                         {
-                            "binTag": "B13", 
+                            "binTag": "B21", 
                             "numItems": 1
                         }, 
                         {
-                            "binTag": "B22", 
+                            "binTag": "B32", 
+                            "numItems": 2
+                        }, 
+                        {
+                            "binTag": "B42", 
                             "numItems": 1
                         }, 
                         {
-                            "binTag": "B41", 
+                            "binTag": "B43", 
                             "numItems": 1
                         }
                     ]
@@ -1164,19 +771,19 @@
                             "numItems": 1
                         }, 
                         {
-                            "binTag": "A22", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "A43", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "B13", 
+                            "binTag": "A31", 
                             "numItems": 2
                         }, 
                         {
                             "binTag": "B23", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "B31", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "B41", 
                             "numItems": 1
                         }, 
                         {
@@ -1190,31 +797,23 @@
                     "receivingBinTag": "C13", 
                     "sourceBins": [
                         {
-                            "binTag": "A11", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "A12", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "A22", 
-                            "numItems": 1
-                        }, 
-                        {
-                            "binTag": "A23", 
-                            "numItems": 1
+                            "binTag": "A13", 
+                            "numItems": 2
                         }, 
                         {
                             "binTag": "A31", 
                             "numItems": 2
                         }, 
                         {
-                            "binTag": "B31", 
-                            "numItems": 2
+                            "binTag": "B12", 
+                            "numItems": 1
                         }, 
                         {
-                            "binTag": "B33", 
+                            "binTag": "B13", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "B22", 
                             "numItems": 1
                         }, 
                         {
@@ -1224,7 +823,380 @@
                     ]
                 }
             ], 
-            "taskId": 13
+            "taskId": 17
+        }, 
+        {
+            "orders": [
+                {
+                    "orderId": 1, 
+                    "receivingBinTag": "C11", 
+                    "sourceBins": [
+                        {
+                            "binTag": "A11", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "A12", 
+                            "numItems": 2
+                        }, 
+                        {
+                            "binTag": "A32", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "A42", 
+                            "numItems": 2
+                        }, 
+                        {
+                            "binTag": "B12", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "B23", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "B41", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "B43", 
+                            "numItems": 1
+                        }
+                    ]
+                }, 
+                {
+                    "orderId": 2, 
+                    "receivingBinTag": "C12", 
+                    "sourceBins": [
+                        {
+                            "binTag": "A22", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "A31", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "A33", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "A41", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "A42", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "B12", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "B23", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "B32", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "B42", 
+                            "numItems": 2
+                        }
+                    ]
+                }, 
+                {
+                    "orderId": 3, 
+                    "receivingBinTag": "C13", 
+                    "sourceBins": [
+                        {
+                            "binTag": "A11", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "A21", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "A23", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "A41", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "B22", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "B31", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "B33", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "B43", 
+                            "numItems": 1
+                        }
+                    ]
+                }
+            ], 
+            "taskId": 14
+        }, 
+        {
+            "orders": [
+                {
+                    "orderId": 1, 
+                    "receivingBinTag": "C11", 
+                    "sourceBins": [
+                        {
+                            "binTag": "A11", 
+                            "numItems": 2
+                        }, 
+                        {
+                            "binTag": "A13", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "A21", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "A22", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "A42", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "B13", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "B42", 
+                            "numItems": 2
+                        }, 
+                        {
+                            "binTag": "B43", 
+                            "numItems": 1
+                        }
+                    ]
+                }, 
+                {
+                    "orderId": 2, 
+                    "receivingBinTag": "C12", 
+                    "sourceBins": [
+                        {
+                            "binTag": "A11", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "A21", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "A33", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "A43", 
+                            "numItems": 2
+                        }, 
+                        {
+                            "binTag": "B12", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "B21", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "B22", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "B23", 
+                            "numItems": 1
+                        }
+                    ]
+                }, 
+                {
+                    "orderId": 3, 
+                    "receivingBinTag": "C13", 
+                    "sourceBins": [
+                        {
+                            "binTag": "A13", 
+                            "numItems": 2
+                        }, 
+                        {
+                            "binTag": "A31", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "A42", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "B11", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "B12", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "B23", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "B31", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "B42", 
+                            "numItems": 2
+                        }
+                    ]
+                }
+            ], 
+            "taskId": 15
+        }, 
+        {
+            "orders": [
+                {
+                    "orderId": 1, 
+                    "receivingBinTag": "C11", 
+                    "sourceBins": [
+                        {
+                            "binTag": "A23", 
+                            "numItems": 3
+                        }, 
+                        {
+                            "binTag": "A33", 
+                            "numItems": 2
+                        }, 
+                        {
+                            "binTag": "A43", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "B12", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "B21", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "B23", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "B32", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "B41", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "B43", 
+                            "numItems": 1
+                        }
+                    ]
+                }, 
+                {
+                    "orderId": 2, 
+                    "receivingBinTag": "C12", 
+                    "sourceBins": [
+                        {
+                            "binTag": "A21", 
+                            "numItems": 3
+                        }, 
+                        {
+                            "binTag": "A41", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "A43", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "B11", 
+                            "numItems": 2
+                        }, 
+                        {
+                            "binTag": "B12", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "B21", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "B23", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "B31", 
+                            "numItems": 1
+                        }
+                    ]
+                }, 
+                {
+                    "orderId": 3, 
+                    "receivingBinTag": "C13", 
+                    "sourceBins": [
+                        {
+                            "binTag": "A13", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "A22", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "A31", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "A32", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "A42", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "B11", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "B13", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "B22", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "B33", 
+                            "numItems": 1
+                        }, 
+                        {
+                            "binTag": "B43", 
+                            "numItems": 1
+                        }
+                    ]
+                }
+            ], 
+            "taskId": 16
         }
     ]
 }

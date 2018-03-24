@@ -3,6 +3,8 @@ import json
 import os
 
 
+MAX_ORDERS_PER_RACK = 6
+
 STUDY_METHODS = [
     'pick-by-light_button',
     'pick-by-hud_rfid',
@@ -15,19 +17,19 @@ NUM_TESTING_TASKS = 10
 
 
 class Bin(object):
-    def __init__(self, shelve_label, row_number, column_number):
+    def __init__(self, rack, row_number, column_number):
         """
-        :param shelve_label: A or B
+        :param rack: A or B
         :param row_number: 1 to 4
         :param column_number: 1 to 3
         """
-        self.shelve_label = shelve_label
+        self.rack = rack
         self.row_number = row_number
         self.column_number = column_number
 
     @property
     def tag(self):
-        return "%s%s%s" % (self.shelve_label, self.row_number, self.column_number)
+        return "%s%s%s" % (self.rack, self.row_number, self.column_number)
 
     def __str__(self):
         return self.tag
@@ -48,7 +50,7 @@ def get_bins():
 BINS = get_bins()
 
 
-def get_source_bins_for_order(num_source_bins):
+def get_source_bins_for_order(racks_and_num_source_bins):
     """
     Randomly selects n source bins that subjects will pick from in an order.
 
@@ -64,7 +66,7 @@ def get_source_bins_for_order(num_source_bins):
 
     Examples
     --------
-    >>> get_source_bins_for_order(3)
+    >>> get_source_bins_for_order({'A': 2, 'B': 1})
     [
         {
             'binTag': 'A32',
@@ -80,8 +82,17 @@ def get_source_bins_for_order(num_source_bins):
 
     # Gets source bins with replacement meaning that there may be duplicate Bin tags
     # When num_source_bins=3, this may return bins with tags 'A32', 'B12', 'A32'.
-    randomly_selected_bins = numpy.random.choice(BINS, num_source_bins, replace=True)
-    selected_bins = list(randomly_selected_bins)
+    selected_bins = []
+    for rack, num_source_bins in racks_and_num_source_bins.iteritems():
+        # Get bins that are in this rack
+        bins_in_rack = [bin for bin in BINS if bin.rack == rack]
+        # Then, randomly select num_source_bins from that rack
+        randomly_selected_bins = numpy.random.choice(
+            a=bins_in_rack,
+            size=num_source_bins,
+            replace=True
+        )
+        selected_bins.extend(randomly_selected_bins)
 
     # In the loops below, we want to map a source bin tag to the number of times it was selected.
     # See the Examples in the docstring for the output of selecting 'A32', 'B12', 'A32'.
@@ -118,6 +129,10 @@ def get_source_bins_for_order(num_source_bins):
     assert len(set([sb['binTag'] for sb in source_bins])) == len(source_bins), \
         "There is a duplicated source bin tag which shouldn't happened!"
 
+    for rack in racks_and_num_source_bins:
+        bins_in_rack = [bin for bin in source_bins if bin['binTag'][0] == rack]
+        assert len(bins_in_rack) <= MAX_ORDERS_PER_RACK, bins_in_rack
+
     return source_bins
 
 
@@ -129,9 +144,10 @@ def get_orders_for_task():
     for i, receiving_bin_tag in enumerate(receiving_bin_tags):
         orders.append({
             'orderId': i + 1,
-            'sourceBins': get_source_bins_for_order(
-                num_source_bins=numpy.random.randint(8, 13)
-            ),
+            'sourceBins': get_source_bins_for_order({
+                'A': numpy.random.randint(4, 7),
+                'B': numpy.random.randint(4, 7),
+            }),
             'receivingBinTag': receiving_bin_tag,
         })
 
