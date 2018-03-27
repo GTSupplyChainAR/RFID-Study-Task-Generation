@@ -3,8 +3,15 @@ import json
 import os
 
 
+# This is the version number of the JSON file.
+# Use this number to keep all copies of the tasks in sync across the study methods.
+VERSION = 1
+
+# The Google Glass HUD client can only fit these number of orders on the screen at once.
 MAX_ORDERS_PER_RACK = 6
 
+# These are the names of all of the methods in this study.
+# These names should be clean to use as file names in any OS
 STUDY_METHODS = [
     'pick-by-light_button',
     'pick-by-hud_rfid',
@@ -12,11 +19,15 @@ STUDY_METHODS = [
     'pick-by-paper_barcode',
 ]
 
+# This is the number of tasks to include in the training files
 NUM_TRAINING_TASKS = 10
+
+# This is the number of tasks to include in testing files
 NUM_TESTING_TASKS = 10
 
 
 class Bin(object):
+    """ A simple structure to hold information about a source bin. """
     def __init__(self, rack, row_number, column_number):
         """
         :param rack: A or B
@@ -38,16 +49,18 @@ class Bin(object):
         return self.tag == other.tag
 
 
-def get_bins():
+def generate_bins():
+    """ Generates all bins in our layout """
     bins = []
-    for shelve_label in ('A', 'B'):
+    racks = ('A', 'B')
+    for rack in racks:
         for row_number in range(1, 5):
             for column_number in range(1, 4):
-                bins.append(Bin(shelve_label, row_number, column_number))
+                bins.append(Bin(rack, row_number, column_number))
     return bins
 
 
-BINS = get_bins()
+BINS = generate_bins()
 
 
 def get_source_bins_for_order(racks_and_num_source_bins):
@@ -155,9 +168,13 @@ def get_orders_for_task():
 
 
 def get_tasks_for_method(num_training_tasks, num_testing_tasks):
+    """ Returns a tuple of training tasks and testing tasks with the specified counts. """
+
     training_tasks = []
 
+    # Increment this in each loop
     task_id = 1
+
     while task_id <= num_training_tasks:
         task = {
             'taskId': task_id,
@@ -175,7 +192,7 @@ def get_tasks_for_method(num_training_tasks, num_testing_tasks):
         testing_tasks.append(task)
         task_id += 1
 
-    # Ensure the lengths of the tasks lists are as expected
+    # Ensure the lengths of the tasks lists are as expected. Very important!
     assert len(training_tasks) == num_training_tasks
     assert len(testing_tasks) == num_testing_tasks
 
@@ -185,6 +202,7 @@ def get_tasks_for_method(num_training_tasks, num_testing_tasks):
 def write_tasks_to_output_file(tasks, is_training_task_list, study_method):
     """ Writes the given tasks to the given output file """
 
+    # This is just the name of the file
     output_file_name = "%s-%s-%s.json" % ('tasks', study_method, 'training' if is_training_task_list else 'testing')
 
     # Create the output directory if it doesn't already exist
@@ -198,7 +216,11 @@ def write_tasks_to_output_file(tasks, is_training_task_list, study_method):
     # Write to the output file
     output_file_name = os.path.join(output_file_dir, output_file_name)
     with open(output_file_name, mode='w+') as f:
-        json.dump({'tasks': tasks}, f, indent=4)
+        obj = {
+            'version': VERSION,
+            'tasks': tasks,
+        }
+        json.dump(obj, f, indent=4)
 
 
 def print_task_ordering(tasks, is_training_task_list):
@@ -211,8 +233,10 @@ def print_task_ordering(tasks, is_training_task_list):
 
 
 if __name__ == '__main__':
+    # Change this seed to alter what pick paths are generated
     numpy.random.seed(1)
 
+    # Generate all the tasks, separated into training and testing tasks
     training_tasks, testing_tasks = get_tasks_for_method(
         num_training_tasks=NUM_TRAINING_TASKS,
         num_testing_tasks=NUM_TESTING_TASKS,
