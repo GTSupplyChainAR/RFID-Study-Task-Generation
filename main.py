@@ -2,7 +2,6 @@ import numpy
 import json
 import os
 
-
 # This is the version number of the JSON file.
 # Use this number to keep all copies of the tasks in sync across the study methods.
 VERSION = 1
@@ -20,7 +19,7 @@ STUDY_METHODS = [
 ]
 
 # This is the number of tasks to include in the training files
-NUM_TRAINING_TASKS = 10
+NUM_TRAINING_TASKS = 5
 
 # This is the number of tasks to include in testing files
 NUM_TESTING_TASKS = 10
@@ -28,6 +27,7 @@ NUM_TESTING_TASKS = 10
 
 class Bin(object):
     """ A simple structure to hold information about a source bin. """
+
     def __init__(self, rack, row_number, column_number):
         """
         :param rack: A or B
@@ -93,9 +93,7 @@ def get_source_bins_for_order(racks_and_num_source_bins):
 
     """
 
-    # Gets source bins with replacement meaning that there may be duplicate Bin tags
-    # When num_source_bins=3, this may return bins with tags 'A32', 'B12', 'A32'.
-    selected_bins = []
+    source_bins = []
     for rack, num_source_bins in racks_and_num_source_bins.iteritems():
         # Get bins that are in this rack
         bins_in_rack = [bin for bin in BINS if bin.rack == rack]
@@ -103,38 +101,19 @@ def get_source_bins_for_order(racks_and_num_source_bins):
         randomly_selected_bins = numpy.random.choice(
             a=bins_in_rack,
             size=num_source_bins,
-            replace=True
+            replace=False,                  # select a unique set of bins
         )
-        selected_bins.extend(randomly_selected_bins)
 
-    # In the loops below, we want to map a source bin tag to the number of times it was selected.
-    # See the Examples in the docstring for the output of selecting 'A32', 'B12', 'A32'.
-
-    source_bins = []
-
-    # Group selected bins by bin tag and count instances of that tag in the list
-    i = 0
-    while i < len(selected_bins):
-        current_bin = selected_bins[i]
-        count_of_bins_with_tag = 1
-
-        # Start searching for duplicate bin tags after current_bin
-        j = i + 1
-        while j < len(selected_bins):
-            if current_bin.tag == selected_bins[j].tag:
-                selected_bins.pop(j)
-                count_of_bins_with_tag += 1
-                # We removed a bin at j, so don't increment j
-            else:
-                # The bin at j is fine, so move on
-                j += 1
-
-        i += 1
-
-        source_bins.append({
-            'binTag': current_bin.tag,
-            'numItems': count_of_bins_with_tag
-        })
+        for bin in randomly_selected_bins:
+            source_bins.append({
+                'binTag': bin.tag,
+                'numItems': numpy.random.choice(
+                    a=[1, 2, 3],            # the number of items in this bin
+                    size=None,              # select one value
+                    replace=False,
+                    p=[0.87, 0.08, 0.05],   # with this probability distribution
+                )
+            })
 
     # Sort (in-place) the source_bins by their tags
     source_bins.sort(key=lambda sb: sb['binTag'])
@@ -158,8 +137,14 @@ def get_orders_for_task():
         orders.append({
             'orderId': i + 1,
             'sourceBins': get_source_bins_for_order({
-                'A': numpy.random.randint(4, 7),
-                'B': numpy.random.randint(4, 7),
+                'A': numpy.random.choice(
+                    a=[4, 5, 6],
+                    p=[0.90, 0.05, 0.05]
+                ),
+                'B': numpy.random.choice(
+                    a=[4, 5, 6],
+                    p=[0.90, 0.05, 0.05]
+                ),
             }),
             'receivingBinTag': receiving_bin_tag,
         })
