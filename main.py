@@ -4,7 +4,7 @@ import os
 
 # This is the version number of the JSON file.
 # Use this number to keep all copies of the tasks in sync across the study methods.
-VERSION = 1
+VERSION = "1.2"
 
 # The Google Glass HUD client can only fit these number of orders on the screen at once.
 MAX_ORDERS_PER_RACK = 6
